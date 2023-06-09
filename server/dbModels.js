@@ -1,19 +1,20 @@
 const db = require('./dbConnection.js');
 
-const addApplication = (name, description, notes, date) => {
-  return db.create({name: nema, description: description, notes: notes, date: date})
+const addApplication = (data) => {
+  return db.myModel.create({companyName: data.name, description: data.description, notes: data.notes, date: data.date})
     .then((data) => data)
     .catch((err) => err)
 }
 
 const getAll = () => {
-  return db.find({})
+  console.log('inside getAll model')
+  return db.myModel.find({})
     .then((data) => data)
     .catch((err) => err)
 }
 
 const findOne = (id) => {
-  return db.find({id: id})
+  return db.myModel.find({id: id})
   .then((data) => data)
   .catch((err) => err)
 }

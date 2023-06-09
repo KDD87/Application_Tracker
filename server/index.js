@@ -10,8 +10,8 @@ app.use(express.json());
 app.use (express.urlencoded({extended: true}));
 
 app.post('/application', (req, res) => {
-  console.log('inside post request in server', req.body)
-  return methods.addApplication()
+  console.log('inside post request in server', req.body.data)
+  return methods.addApplication(req.body.data)
   .then(() => {
     console.log('Post request has completed')
     res.status(201).send('Successful');
@@ -26,7 +26,7 @@ app.get('/applications', (req, res) => {
   console.log('inside getAll request in server')
   return methods.getAll()
   .then((data) => {
-    console.log('getAll request has completed')
+    console.log('getAll request has completed', data)
     res.status(200).send(data);
   })
   .catch((err) => {
