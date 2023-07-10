@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const HomeBar = ({redirect}) => {
-
+const HomeBar = ({ redirect }) => {
   const handleHomePageClick = () => {
-    redirect(0);
+    redirect(0)
   }
   const handleAddAppClick = () => {
-    redirect(1);
+    redirect(1)
   }
 
   return (
@@ -19,4 +18,4 @@ const HomeBar = ({redirect}) => {
   )
 }
 
-export default HomeBar;
+export default HomeBar
