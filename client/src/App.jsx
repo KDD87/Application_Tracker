@@ -51,7 +51,7 @@ const App = () => {
   // }
   return (
     <Routes>
-      <Route path='/' element={<Home />}/>
+      <Route path='/' element={<h1>Hello Home</h1>}/>
     </Routes>
   )
 }
