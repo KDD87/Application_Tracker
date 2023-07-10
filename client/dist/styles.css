@@ -1,0 +1,32 @@
+/* *{
+  border: 1px solid red;
+}
+
+body {
+  background-color: rgb(69, 122, 202);
+}
+
+.homebar {
+  display: flex;
+  margin: 10px;
+  flex-direction:row;  
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid greenyellow;
+  border-radius: 5px;
+}
+
+.homepage {
+  margin: 20px;
+  font-size: 40px;
+}
+
+.buttons_bar {
+  margin: 20px;
+}
+.submitted_app {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  overflow-y: scroll;
+} */

@@ -1,1 +1,1 @@
-exports.application = ('./application.js');
+exports.application = ('./application.js')

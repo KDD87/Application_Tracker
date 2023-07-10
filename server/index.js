@@ -1,15 +1,16 @@
-const express = require("express");
-const path = require("path");
+const express = require('express')
+const path = require('path')
 // const db = require('./dbConnection.js');
 // const methods = require('../database/dbModels.js');
-require("dotenv").config();
+require('dotenv').config()
 
-const app = express();
-app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, "../client/dist")));
-app.use(express.json());
-app.use (express.urlencoded({extended: true}));
-const routes = require('./routes.js');
+const app = express()
+const routes = require('./routes.js')
+app.set('view engine', 'ejs')
+app.use(express.static(path.join(__dirname, '../client/dist')))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use('/', routes)
 
 // app.post('/application', (req, res) => {
 //   console.log('inside post request in server', req.body.data)
@@ -51,5 +52,5 @@ const routes = require('./routes.js');
 // })
 
 app.listen(process.env.PORT, () => {
-  console.log("app listening on port " + process.env.PORT);
+  console.log('app listening on port ' + process.env.PORT)
 })
