@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Display = ({ datas }) => {
-  if (!datas.data) {
+  if (!datas.data || datas.data.length === 0) {
     return (
       <div>
         You have not applied for any jobs yet. Start applying!!!!
@@ -23,7 +23,7 @@ const Display = ({ datas }) => {
                 <div>
                   {data.notes}
                 </div>
-                <div><a href={data.url}>URL LINK</a></div>
+                <div><a href={data.url}>Website LINK</a></div>
               </div>
           })
         }

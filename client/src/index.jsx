@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import axios from "axios";
 import HomeBar from "./components/HomeBar.jsx";
 import AddApplication from "./components/AddApp.jsx";
@@ -33,22 +34,24 @@ const App = () => {
     })
   }
 
-  if (page === 0) {
-    return (
-      <div>
-        <HomeBar redirect={setPage}/>
-        <Display datas={data}/>
-      </div>
-    )
-  }
-  if (page === 1) {
-    return (
-      <div>
-        <HomeBar redirect={setPage}/>
-        <AddApplication addOne={addOne}/>
-      </div>
-    )
-  }
+
+
+  // if (page === 0) {
+  //   return (
+  //     <div>
+  //       <HomeBar redirect={setPage}/>
+  //       <Display datas={data}/>
+  //     </div>
+  //   )
+  // }
+  // if (page === 1) {
+  //   return (
+  //     <div>
+  //       <HomeBar redirect={setPage}/>
+  //       <AddApplication addOne={addOne} setPage={setPage}/>
+  //     </div>
+  //   )
+  // }
 }
 
 const domNode = document.getElementById("app");

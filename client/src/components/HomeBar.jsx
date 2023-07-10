@@ -12,7 +12,9 @@ const HomeBar = ({redirect}) => {
   return (
     <div className="homebar">
       <h2 className="homepage" onClick={handleHomePageClick}>App Tracker</h2>
-      <input type="button" className="addapp" value="Add Application" onClick={handleAddAppClick}></input>
+      <div className="buttons_bar">
+        <input type="button" className="addapp" value="Add Application" onClick={handleAddAppClick}></input>
+      </div>
     </div>
   )
 }

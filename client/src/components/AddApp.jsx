@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddApplication = ({addOne}) => {
+const AddApplication = ({addOne, setPage}) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [notes, setNotes] = useState('');
@@ -27,6 +27,7 @@ const AddApplication = ({addOne}) => {
       date: new Date()
     }
     addOne(obj);
+    setPage(0);
   }
 
   return (

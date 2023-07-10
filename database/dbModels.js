@@ -1,7 +1,7 @@
 const db = require('./dbConnection.js');
 
 const addApplication = (data) => {
-  return db.myModel.create({companyName: data.name, description: data.description, notes: data.notes, date: data.date})
+  return db.myModel.create({companyName: data.name, description: data.description, notes: data.notes, date: data.date, url:data.url})
     .then((data) => data)
     .catch((err) => err)
 }
