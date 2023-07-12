@@ -9,6 +9,7 @@ module.exports = {
   ],
   overrides: [
     {
+      semi: ['error', 'never'],
       env: {
         node: true
       },
