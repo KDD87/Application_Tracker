@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import DataDisplay from './DataDisplay.jsx';
 // eslint-disable-next-line react/prop-types
-const HomeBar = ({ data }) => {
+const HomeBar = ({ data, setData, getAll }) => {
 
-  const [inputData, setInputData] = useState(data)
+  // const [inputData, setInputData] = useState(data)
   const [search, setSearch] = useState('');
   
   let monitorChange = {
@@ -16,7 +16,7 @@ const HomeBar = ({ data }) => {
     monitorChange[e.target.name](e.target.value);
     axios.get('/search', {params: {data: search }})
     .then((data) => {
-      setInputData(data);
+      setData(data);
     })
     console.log(e.target.name, e.target.value);
   }
@@ -33,7 +33,7 @@ const HomeBar = ({ data }) => {
           <Link to="/AddApp"> <input type="button" className="addapp" value="Add Application" ></input></Link>
         </div>
       </div>
-      <DataDisplay datas={inputData}/>
+      <DataDisplay datas={data} getAll={getAll}/>
     </>
   )
 };

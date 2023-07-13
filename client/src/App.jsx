@@ -4,24 +4,29 @@ import axios from 'axios'
 import HomeBar from './components/HomeBar.jsx'
 import AddApplication from './components/AddApp.jsx'
 // import Display from './components/DataDisplay.jsx'
+// const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+// const date = new Date().toLocaleDateString("en-US", options);
+// const fakeData = {
+//   data: [{ _id: 1, companyName: 'costco', date: date }, { _id: 2, companyName: 'walmart', date: date }, { _id: 3, companyName: 'Yahoo', date: date }, { _id: 4, companyName: 'Apple', date: date }]
+// }
 
 const App = () => {
   const [data, setData] = useState([])
-  // const [page, setPage] = useState(0)
 
-  // const getAll = () => {
-  //   axios.get('/applications')
-  //     .then((data) => {
-  //       setData(data)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
 
-  // useEffect(() => {
-  //   getAll()
-  // }, [])
+  const getAll = () => {
+    axios.get('/applications')
+      .then((data) => {
+        setData(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  useEffect(() => {
+    getAll()
+  }, [])
 
   const addOne = (formData) => {
     axios.post('/application', { data: formData })
@@ -33,25 +38,9 @@ const App = () => {
       })
   }
 
-  // if (page === 0) {
-  //   return (
-  //     <div>
-  //       <HomeBar redirect={setPage}/>
-  //       <Display datas={data}/>
-  //     </div>
-  //   )
-  // }
-  // if (page === 1) {
-  //   return (
-  //     <div>
-  //       <HomeBar redirect={setPage}/>
-  //       <AddApplication addOne={addOne} setPage={setPage}/>
-  //     </div>
-  //   )
-  // }
   return (
     <Routes>
-      <Route path='/' element={<HomeBar data={data}/>}/>
+      <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll}/>}/>
       <Route path='/AddApp' element={<AddApplication addOne={ addOne } />}/>
     </Routes>
   )

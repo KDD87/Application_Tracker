@@ -22,5 +22,18 @@ module.exports = {
     return db.myModel.find({ id })
       .then((data) => data)
       .catch((err) => err)
+  },
+
+  updateOne: (info) => {
+    console.log('inside updateOne model', info)
+    // return db.myModel.updateOne({ id: info.key }, {$set: info.data})
+    // .then((data) => data)
+    // .catch((err) => err)
+  },
+  deleteOne: (id) => {
+    console.log('inside deleteOne model', id)
+    return db.myModel.deleteOne({ id })
+      .then((data) => data)
+      .catch((err) => err)
   }
 }
