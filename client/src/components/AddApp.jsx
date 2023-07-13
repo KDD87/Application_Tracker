@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const AddApplication = ({ addOne, setPage }) => {
+const AddApplication = ({ addOne, getAll }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [notes, setNotes] = useState('');
@@ -21,7 +21,8 @@ const AddApplication = ({ addOne, setPage }) => {
 
   const handleSubmitClick = () => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date().toLocaleDateString('en-US', options);
+    let date = new Date().toLocaleDateString('en-US', options);
+    date = JSON.stringify(date);
     let obj = {
       name: name,
       description: description,
@@ -29,8 +30,9 @@ const AddApplication = ({ addOne, setPage }) => {
       url: url,
       date: date
     }
+    console.log('object', obj)
     addOne(obj);
-    setPage(0);
+    getAll();
   }
 
   return (
@@ -38,7 +40,7 @@ const AddApplication = ({ addOne, setPage }) => {
     <div className="homebar">
       <Link to="/"><h2>App Tracker</h2></Link>
       <div>
-        <input type="button" className="save" value="Save" onClick={handleSubmitClick}></input>
+        <Link to="/"><input type="button" className="save" value="Save" onClick={handleSubmitClick}></input></Link>
       </div>
     </div>
       <div className="formHome">

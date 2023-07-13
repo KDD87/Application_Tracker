@@ -27,8 +27,9 @@ module.exports = {
   },
   addOne: (req, res) => {
     console.log('inside addOne one in controllers', req.body);
-    models.addApplication()
+    models.addApplication(req.body.data)
       .then((results) => {
+        console.log('inside then of addOne one in controllers');
         // res.status(200).send(results.rows)
       })
       .catch((err) => {
@@ -48,14 +49,15 @@ module.exports = {
     //   });
   }, 
   deleteOne: (req, res) => {
-    console.log('inside deleteOne one in controllers', req.body);
-    // models.deleteOne()
-    //   .then((results) => {
-    //     // res.status(200).send(results.rows);
-    //   })
-    //   .catch((err) => {
-    //     res.status(500).send('ERROR GET user');
-    //     console.log('ERROR GET user', err);
-    //   });
+    console.log('inside deleteOne in controllers', req.body.id);
+    models.deleteOne(req.body.id)
+      .then((results) => {
+        console.log('inside then of deleteOne in controllers');
+        res.status(200).send('data was deleted');
+      })
+      .catch((err) => {
+        res.status(500).send('ERROR GET user');
+        console.log('ERROR GET user', err);
+      });
   } 
 }

@@ -10,13 +10,13 @@ import axios from 'axios';
 
 // eslint-disable-next-line react/prop-types
 // const Display = ({ datas }) => {
-const Display = ({ datas }) => {
+const Display = ({ datas, getAll }) => {
 
   const handleDeleteClick = (id) => {
-    console.log(id)
-    axios.delete('/application', {data: id})
+    console.log('ID', id)
+    axios.delete('/application', { data: {id: id} })
     .then(() => {
-      alert('Item has been deleted');
+      getAll();
     })
     .catch((err) => err)
   }
@@ -39,7 +39,6 @@ const Display = ({ datas }) => {
                   <h3>{data.companyName}</h3>
                   <div>Date Applied To: {data.date}</div>
                   <button onClick={() => {handleDeleteClick(data._id)} }>Delete</button>
-                  <button>Update</button>
                 </div>
               </li>
             )

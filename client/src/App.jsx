@@ -41,7 +41,7 @@ const App = () => {
   return (
     <Routes>
       <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll}/>}/>
-      <Route path='/AddApp' element={<AddApplication addOne={ addOne } />}/>
+      <Route path='/AddApp' element={<AddApplication addOne={ addOne } getAll={getAll} />}/>
     </Routes>
   )
 }

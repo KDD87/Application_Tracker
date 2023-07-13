@@ -14,10 +14,10 @@ const HomeBar = ({ data, setData, getAll }) => {
   
   const handleSearch = (e) => {
     monitorChange[e.target.name](e.target.value);
-    axios.get('/search', {params: {data: search }})
-    .then((data) => {
-      setData(data);
-    })
+    // axios.get('/search', {params: {data: search }})
+    // .then((data) => {
+    //   setData(data);
+    // })
     console.log(e.target.name, e.target.value);
   }
 
@@ -27,7 +27,7 @@ const HomeBar = ({ data, setData, getAll }) => {
         <h2>App Tracker</h2>
         <div>
           <button>Search</button>
-          <input type="text" className="search" name="search" placeholder="Search"></input>
+          <input type="text" className="search" name="search" placeholder="Search" onChange={handleSearch}></input>
         </div>
         <div className="buttons_bar">
           <Link to="/AddApp"> <input type="button" className="addapp" value="Add Application" ></input></Link>

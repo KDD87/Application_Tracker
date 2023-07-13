@@ -12,7 +12,7 @@ module.exports = {
 
   getAll: () => {
     console.log('inside getAll model')
-    return db.myModel.find({})
+    return db.myModel.find({}).sort({_id: -1})
       .then((data) => data)
       .catch((err) => err)
   },
@@ -32,7 +32,7 @@ module.exports = {
   },
   deleteOne: (id) => {
     console.log('inside deleteOne model', id)
-    return db.myModel.deleteOne({ id })
+    return db.myModel.deleteOne({ _id: id })
       .then((data) => data)
       .catch((err) => err)
   }
