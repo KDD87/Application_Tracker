@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import axios from 'axios'
-// import HomeBar from './components/HomeBar.jsx'
-// import AddApplication from './components/AddApp.jsx'
+import HomeBar from './components/HomeBar.jsx'
+import AddApplication from './components/AddApp.jsx'
 // import Display from './components/DataDisplay.jsx'
 
 const App = () => {
-  // const [data, setData] = useState([])
+  const [data, setData] = useState([])
   // const [page, setPage] = useState(0)
 
   // const getAll = () => {
@@ -23,15 +23,15 @@ const App = () => {
   //   getAll()
   // }, [])
 
-  // const addOne = (formData) => {
-  //   axios.post('/application', { data: formData })
-  //     .then((data) => {
-  //       getAll()
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
+  const addOne = (formData) => {
+    axios.post('/application', { data: formData })
+      .then((data) => {
+        getAll()
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   // if (page === 0) {
   //   return (
@@ -51,7 +51,8 @@ const App = () => {
   // }
   return (
     <Routes>
-      <Route path='/' element={<h1>Hello Home</h1>}/>
+      <Route path='/' element={<HomeBar data={data}/>}/>
+      <Route path='/AddApp' element={<AddApplication addOne={ addOne } />}/>
     </Routes>
   )
 }

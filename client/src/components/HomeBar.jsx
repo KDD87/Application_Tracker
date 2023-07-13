@@ -1,21 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import DataDisplay from './DataDisplay.jsx';
+// eslint-disable-next-line react/prop-types
+const HomeBar = ({ data }) => {
 
-const HomeBar = ({ redirect }) => {
-  const handleHomePageClick = () => {
-    redirect(0)
+  const [inputData, setInputData] = useState(data)
+  const [search, setSearch] = useState('');
+  
+  let monitorChange = {
+    search: setSearch
   }
-  const handleAddAppClick = () => {
-    redirect(1)
+  
+  const handleSearch = (e) => {
+    monitorChange[e.target.name](e.target.value);
+    axios.get('/search', {params: {data: search }})
+    .then((data) => {
+      setInputData(data);
+    })
+    console.log(e.target.name, e.target.value);
   }
 
   return (
-    <div className="homebar">
-      <h2 className="homepage" onClick={handleHomePageClick}>App Tracker</h2>
-      <div className="buttons_bar">
-        <input type="button" className="addapp" value="Add Application" onClick={handleAddAppClick}></input>
+    <>
+      <div className="homebar">
+        <h2>App Tracker</h2>
+        <div>
+          <button>Search</button>
+          <input type="text" className="search" name="search" placeholder="Search"></input>
+        </div>
+        <div className="buttons_bar">
+          <Link to="/AddApp"> <input type="button" className="addapp" value="Add Application" ></input></Link>
+        </div>
       </div>
-    </div>
+      <DataDisplay datas={inputData}/>
+    </>
   )
-}
+};
 
-export default HomeBar
+export default HomeBar;
