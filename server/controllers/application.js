@@ -2,11 +2,11 @@ const models = require('../models/application.js');
 
 module.exports = {
   getOne: (req, res) => {
-    console.log('inside get one in controllers', req.query);
-    models.findOne(req.query)
+    console.log('inside get one in controllers', req.query.data);
+    models.findOne(req.query.data)
       .then((results) => {
-        console.log('inside then of getOne', results);
-        // res.status(200).send(results.rows);
+        console.log('inside then of getOne', results[0]);
+        res.status(200).send(results[0]);
       })
       .catch((err) => {
         res.status(500).send('ERROR GET user');

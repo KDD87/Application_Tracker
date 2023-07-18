@@ -19,7 +19,7 @@ module.exports = {
 
   findOne: (id) => {
     console.log('inside findOne model', id)
-    return db.myModel.find({ id })
+    return db.myModel.find({ _id: id })
       .then((data) => data)
       .catch((err) => err)
   },

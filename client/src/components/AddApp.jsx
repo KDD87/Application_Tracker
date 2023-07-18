@@ -22,7 +22,7 @@ const AddApplication = ({ addOne, getAll }) => {
   const handleSubmitClick = () => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let date = new Date().toLocaleDateString('en-US', options);
-    date = JSON.stringify(date);
+    // date = JSON.stringify(date);
     let obj = {
       name: name,
       description: description,
@@ -47,13 +47,13 @@ const AddApplication = ({ addOne, getAll }) => {
         <div className="form">
           <form>
             <label>Name</label>
-            <input type="text" className="name" placeholder="Add Name" name="name" onChange={handleFormInput}></input>
+            <input type="text" className="name" placeholder="Add Company Name" name="name" onChange={handleFormInput}></input>
             <label>Description</label>
-            <textarea type="text" className="description" placeholder="Add Description" name="description" onChange={handleFormInput}></textarea>
+            <textarea type="text" className="description" placeholder="Add Job Title and Description" name="description" onChange={handleFormInput}></textarea>
             <label>Notes</label>
             <textarea type="text" className="notes" placeholder="Add Notes" name="notes" onChange={handleFormInput}></textarea>
             <label>Link</label>
-            <input type="text" className="url" placeholder="Add URL" name="url" onChange={handleFormInput}></input>
+            <input type="text" className="url" placeholder="Add Company Website URL" name="url" onChange={handleFormInput}></input>
           </form>
         </div>
       </div>

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import axios from 'axios'
-import HomeBar from './components/HomeBar.jsx'
-import AddApplication from './components/AddApp.jsx'
+import React, { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import HomeBar from './components/HomeBar.jsx';
+import AddApplication from './components/AddApp.jsx';
+import IndividualJobCard from './components/IndividualJobCard.jsx'
 // import Display from './components/DataDisplay.jsx'
 // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 // const date = new Date().toLocaleDateString("en-US", options);
@@ -11,9 +12,9 @@ import AddApplication from './components/AddApp.jsx'
 // }
 
 const App = () => {
-  const [data, setData] = useState([])
-
-
+  const [data, setData] = useState([]);
+  const [individualCardData, setIndividualCardData] = useState({});
+ 
   const getAll = () => {
     axios.get('/applications')
       .then((data) => {
@@ -40,8 +41,9 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll}/>}/>
+      <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll} setIndividualCardData={setIndividualCardData}/>}/>
       <Route path='/AddApp' element={<AddApplication addOne={ addOne } getAll={getAll} />}/>
+      <Route path='/IndividualJobCard' element={<IndividualJobCard  data={individualCardData}/>}/>
     </Routes>
   )
 }

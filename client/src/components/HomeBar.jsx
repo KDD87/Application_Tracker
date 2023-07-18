@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import DataDisplay from './DataDisplay.jsx';
 // eslint-disable-next-line react/prop-types
-const HomeBar = ({ data, setData, getAll }) => {
+const HomeBar = ({ data, setData, getAll, setIndividualCardData }) => {
 
   // const [inputData, setInputData] = useState(data)
   const [search, setSearch] = useState('');
@@ -33,7 +33,7 @@ const HomeBar = ({ data, setData, getAll }) => {
           <Link to="/AddApp"> <input type="button" className="addapp" value="Add Application" ></input></Link>
         </div>
       </div>
-      <DataDisplay datas={data} getAll={getAll}/>
+      <DataDisplay datas={data} getAll={getAll} setIndividualCardData={setIndividualCardData}/>
     </>
   )
 };

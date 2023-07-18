@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(181, 144, 59);
+  overflow-y: hidden;
 }
 
 .homebar {
@@ -35,8 +36,8 @@ body {
   align-items: center;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
-  overflow-y: scroll;
-  overflow-y: hidden;
+  /* overflow-y: scroll;
+  overflow-y: hidden; */
 }
 
 .individual_job {
@@ -49,7 +50,7 @@ body {
 
 .individual_job:hover {
   cursor: pointer;
-  border: 3px solid black
+  border: 2px solid black
 }
 
 
@@ -97,7 +98,11 @@ body {
 }
 
 .save:hover {
-  border: 2px;
+  border: 1px;
+  cursor: pointer;
+}
+.deleteButton:hover {
+  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -122,4 +127,20 @@ body {
   border: 1px solid black;
   border-radius: 5px;
   width: 180px;
+}
+
+.individualJob {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.individualJobCard {
+  border: 1px solid greenyellow;
+  width: 200px;
+  height: 335px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
