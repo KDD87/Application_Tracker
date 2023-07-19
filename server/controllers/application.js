@@ -59,5 +59,5 @@ module.exports = {
         res.status(500).send('ERROR GET user');
         console.log('ERROR GET user', err);
       });
-  } 
+  }
 }

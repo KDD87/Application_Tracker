@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const IndividualJobCard = ({ data }) => {
+const IndividualJobCard = ({ data, getAll }) => {
 console.log('inside IndividualJobData', typeof data.date);
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 let date = new Date(data.date).toLocaleDateString('en-US', options);
+
+const handleAppTrackerClick = () => {
+  getAll();
+}
   return (
     <>
     <div className="homebar">
-      <Link to="/"><h2>App Tracker</h2></Link>
+      <Link to="/" onClick={() => {handleAppTrackerClick()}}><h2>App Tracker</h2></Link>
       <div className="buttons_bar">
         <Link to="/AddApp"> <input type="button" className="addapp" value="Add Application" ></input></Link>
       </div>

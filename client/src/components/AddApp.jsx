@@ -46,9 +46,9 @@ const AddApplication = ({ addOne, getAll }) => {
       <div className="formHome">
         <div className="form">
           <form>
-            <label>Name</label>
+            <label >Name</label>
             <input type="text" className="name" placeholder="Add Company Name" name="name" onChange={handleFormInput}></input>
-            <label>Description</label>
+            <label >Description</label>
             <textarea type="text" className="description" placeholder="Add Job Title and Description" name="description" onChange={handleFormInput}></textarea>
             <label>Notes</label>
             <textarea type="text" className="notes" placeholder="Add Notes" name="notes" onChange={handleFormInput}></textarea>

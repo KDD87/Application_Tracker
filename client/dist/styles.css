@@ -3,8 +3,10 @@
 } */
 
 body {
-  background-color: rgb(181, 144, 59);
+  background-color: rgb(226, 222, 215);
   overflow-y: hidden;
+  /* display: flex;
+  align-items: center; */
 }
 
 .homebar {
@@ -25,6 +27,11 @@ body {
   font-size: 40px;
 }
 
+
+.displayParent {
+  display: flex;
+  justify-content: center;
+}
 .display {
   background-color: rgb(69, 176, 176);
   display: flex;
@@ -36,6 +43,7 @@ body {
   align-items: center;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
+  width: 400px;
   /* overflow-y: scroll;
   overflow-y: hidden; */
 }

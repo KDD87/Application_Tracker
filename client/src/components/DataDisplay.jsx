@@ -31,31 +31,33 @@ const Display = ({ datas, getAll, setIndividualCardData }) => {
     .catch((err) => err)
   }
 
-  if (!datas.data || datas.data.length === 0) {
+  if (!datas || datas.length === 0) {
     return (
       <div className="display">
         You have not applied for any jobs yet. Start applying!!!!
       </div>
     )
   } else {
-    console.log('date', datas.data)
+    console.log('date', datas)
     return (
-      <div className="display">
-        <ol>
-          {
-            datas.data.map((data) =>
-              <li key={data._id} className="submitted_app">
-                <Link to="/IndividualJobCard" onClick={() => {handleJobCardClick(data._id)}}><div className="individual_job" >
-                  <h3>{data.companyName}</h3>
-                  <div>Date Applied To: {data.date}</div>
-                </div></Link>
-                  <button className="deleteButton" onClick={() => {handleDeleteClick(data._id)} }>Delete</button>
-                  <br></br>
-                  <br></br>
-              </li>
-            )
-          }
-        </ol>
+      <div className="displayParent">
+        <div className="display">
+          <ol>
+            {
+              datas.map((data) =>
+                <li key={data._id} className="submitted_app">
+                  <Link to="/IndividualJobCard" onClick={() => {handleJobCardClick(data._id)}}><div className="individual_job" >
+                    <h3>{data.companyName}</h3>
+                    <div>Date Applied To: {data.date}</div>
+                  </div></Link>
+                    <button className="deleteButton" onClick={() => {handleDeleteClick(data._id)} }>Delete</button>
+                    <br></br>
+                    <br></br>
+                </li>
+              )
+            }
+          </ol>
+        </div>
       </div>
     )
   }

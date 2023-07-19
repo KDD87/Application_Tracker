@@ -18,7 +18,7 @@ const App = () => {
   const getAll = () => {
     axios.get('/applications')
       .then((data) => {
-        setData(data)
+        setData(data.data)
       })
       .catch((err) => {
         console.log(err)
@@ -41,9 +41,9 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll} setIndividualCardData={setIndividualCardData}/>}/>
+      <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll} setIndividualCardData={setIndividualCardData} />}/>
       <Route path='/AddApp' element={<AddApplication addOne={ addOne } getAll={getAll} />}/>
-      <Route path='/IndividualJobCard' element={<IndividualJobCard  data={individualCardData}/>}/>
+      <Route path='/IndividualJobCard' element={<IndividualJobCard  data={individualCardData} getAll={getAll} />}/>
     </Routes>
   )
 }

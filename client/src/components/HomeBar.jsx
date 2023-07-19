@@ -5,20 +5,16 @@ import DataDisplay from './DataDisplay.jsx';
 // eslint-disable-next-line react/prop-types
 const HomeBar = ({ data, setData, getAll, setIndividualCardData }) => {
 
-  // const [inputData, setInputData] = useState(data)
-  const [search, setSearch] = useState('');
-  
-  let monitorChange = {
-    search: setSearch
-  }
-  
   const handleSearch = (e) => {
-    monitorChange[e.target.name](e.target.value);
-    // axios.get('/search', {params: {data: search }})
-    // .then((data) => {
-    //   setData(data);
-    // })
-    console.log(e.target.name, e.target.value);
+    axios.get('/applications')
+    .then((data) => {
+      const searchedItems = data.data.filter((name) => {
+        return name.companyName.toLowerCase().includes(e.target.value.toLowerCase());
+      })
+      const obj = {}
+      setData(searchedItems);
+    })
+    .catch((err) => err)
   }
 
   return (
