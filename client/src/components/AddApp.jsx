@@ -21,8 +21,7 @@ const AddApplication = ({ addOne, getAll }) => {
 
   const handleSubmitClick = () => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    let date = new Date().toLocaleDateString('en-US', options);
-    // date = JSON.stringify(date);
+    const date = new Date().toLocaleDateString('en-US', options);
     let obj = {
       name: name,
       description: description,
@@ -30,7 +29,6 @@ const AddApplication = ({ addOne, getAll }) => {
       url: url,
       date: date
     }
-    console.log('object', obj)
     addOne(obj);
     getAll();
   }

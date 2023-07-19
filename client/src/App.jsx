@@ -18,6 +18,7 @@ const App = () => {
   const getAll = () => {
     axios.get('/applications')
       .then((data) => {
+        console.log('inside getaAll in App.jsx', data)
         setData(data.data)
       })
       .catch((err) => {

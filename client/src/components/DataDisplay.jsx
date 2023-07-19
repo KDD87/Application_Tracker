@@ -31,6 +31,7 @@ const Display = ({ datas, getAll, setIndividualCardData }) => {
     .catch((err) => err)
   }
 
+  
   if (!datas || datas.length === 0) {
     return (
       <div className="display">

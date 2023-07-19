@@ -4,7 +4,8 @@
 
 body {
   background-color: rgb(226, 222, 215);
-  overflow-y: hidden;
+  /* overflow-y: scroll;
+  overflow-y: hidden; */
   /* display: flex;
   align-items: center; */
 }
@@ -31,6 +32,8 @@ body {
 .displayParent {
   display: flex;
   justify-content: center;
+  /* overflow-y: scroll; */
+  /* overflow-y: hidden; */
 }
 .display {
   background-color: rgb(69, 176, 176);
@@ -44,8 +47,8 @@ body {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   width: 400px;
-  /* overflow-y: scroll;
-  overflow-y: hidden; */
+  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .individual_job {

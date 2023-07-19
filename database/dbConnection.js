@@ -8,7 +8,7 @@ const mySchema = new Schema({
   description: String,
   notes: String,
   url: String,
-  date: Date
+  date: String
 })
 
 const myModel = mongoose.model('applications', mySchema)
