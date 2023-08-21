@@ -17,5 +17,4 @@ The IndividualJobCard component consists of the nav bar without the search featu
 
 <img src="Images/Screenshot 2023-08-21 at 3.29.20 PM.png">
 
-This project is still in the implementation phase and will hopefully have new features soon.
-
+This project is still in the implementation phase and will hopefully have new features soon!
