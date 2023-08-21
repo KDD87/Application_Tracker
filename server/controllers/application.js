@@ -37,16 +37,29 @@ module.exports = {
         console.log('ERROR GET user', err);
       });
   }, 
-  updateOne: (req, res) => {
+  updateOneNotes: (req, res) => {
     console.log('inside updateOne one in controllers', req.body);
-    // models.updateOne()
-    //   .then((results) => {
-    //     // res.status(200).send(results.rows);
-    //   })
-    //   .catch((err) => {
-    //     res.status(500).send('ERROR GET user');
-    //     console.log('ERROR GET user', err);
-    //   });
+    models.updateOneNotes(req.body.data)
+      .then((results) => {
+        console.log('inside success then block of updateOne in controllers');
+        res.status(200).send(results.rows);
+      })
+      .catch((err) => {
+        res.status(500).send('ERROR GET user');
+        console.log('ERROR GET user', err);
+      });
+  }, 
+  updateOneDescription: (req, res) => {
+    console.log('inside updateOne one in controllers', req.body);
+    models.updateOneDescription(req.body.data)
+      .then((results) => {
+        console.log('inside success then block of updateOne in controllers');
+        res.status(200).send(results.rows);
+      })
+      .catch((err) => {
+        res.status(500).send('ERROR GET user');
+        console.log('ERROR GET user', err);
+      });
   }, 
   deleteOne: (req, res) => {
     console.log('inside deleteOne in controllers', req.body.id);

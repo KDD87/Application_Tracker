@@ -22,6 +22,8 @@ const Display = ({ datas, getAll, setIndividualCardData }) => {
     .catch((err) => err)
   }
 
+
+  //this should be in the parent and then passed down
   const handleJobCardClick = (id) => {
     axios.get('application', { params: { data: id } })
     .then((data) => {

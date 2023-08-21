@@ -141,16 +141,16 @@ body {
 }
 
 .individualJob {
-  border: 1px solid red;
+  border: 1px solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
-  
+  border-radius: 5px;
 }
 
 .individualJobCard {
-  border: 1px solid greenyellow;
-  width: 200px;
-  height: 335px;
+  /* border: 1px solid greenyellow; */
+  /* width: 200px;
+  height: 335px; */
   padding-left: 15px;
   padding-top: 10px;
   padding-bottom: 10px;

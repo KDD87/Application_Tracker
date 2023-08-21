@@ -9,7 +9,8 @@ router.get('/', function (req, res) {
 router.get('/applications', controllers.application.getAll);
 router.get('/application', controllers.application.getOne);
 router.post('/application', controllers.application.addOne);
-router.put('/application', controllers.application.updateOne);
+router.put('/application', controllers.application.updateOneDescription);
+router.put('/applications', controllers.application.updateOneNotes);
 router.delete('/application', controllers.application.deleteOne)
 
 module.exports = router;

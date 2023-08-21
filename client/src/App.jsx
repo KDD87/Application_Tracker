@@ -40,11 +40,33 @@ const App = () => {
       })
   }
 
+  const editText = (data) => {
+    console.log('inside editText function in client', data)
+    axios.put('/application', {data: data})
+    .then((data) => {
+      console.log('inside then block of editTExt in client', data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
+  const editNotes = (data) => {
+    console.log('inside editNotes function in client', data)
+    axios.put('/applications', {data: data})
+    .then((data) => {
+      console.log('inside then block of editNotes in client', data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
   return (
     <Routes>
       <Route path='/' element={<HomeBar data={data} setData={setData} getAll={getAll} setIndividualCardData={setIndividualCardData} />}/>
       <Route path='/AddApp' element={<AddApplication addOne={ addOne } getAll={getAll} />}/>
-      <Route path='/IndividualJobCard' element={<IndividualJobCard  data={individualCardData} getAll={getAll} />}/>
+      <Route path='/IndividualJobCard' element={<IndividualJobCard  data={individualCardData} getAll={getAll} editText={editText} editNotes={editNotes}/>}/>
     </Routes>
   )
 }
