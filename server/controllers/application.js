@@ -49,12 +49,12 @@ module.exports = {
         console.log('ERROR GET user', err);
       });
   }, 
-  updateOneDescription: (req, res) => {
+  updateOne: (req, res) => {
     console.log('inside updateOne one in controllers', req.body);
-    models.updateOneDescription(req.body.data)
+    models.updateOne(req.body.data)
       .then((results) => {
         console.log('inside success then block of updateOne in controllers');
-        res.status(200).send(results.rows);
+        res.status(200).send('data updated');
       })
       .catch((err) => {
         res.status(500).send('ERROR GET user');

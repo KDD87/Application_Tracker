@@ -41,7 +41,7 @@ const Display = ({ datas, getAll, setIndividualCardData }) => {
       </div>
     )
   } else {
-    console.log('date', datas)
+    // console.log('data', datas)
     return (
       <div className="displayParent">
         <div className="display">

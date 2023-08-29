@@ -24,14 +24,14 @@ module.exports = {
       .catch((err) => err)
   },
 
-  updateOneDescription: (info) => {
+  updateOne: (info) => {
     console.log('inside updateOne model', info)
-    return db.myModel.updateOne({ _id: info.id}, {$set: {description: info.text}})
+    return db.myModel.updateOne({ _id: info.id}, {$set: {description: info.descriptionText, notes: info.noteText}})
     .then((data) => data)
     .catch((err) => err)
   },
   updateOneNotes: (info) => {
-    console.log('inside updateOne model', info)
+    console.log('inside updateOneNotes model', info)
     return db.myModel.updateOne({ _id: info.id}, {$set: {notes: info.text}})
     .then((data) => data)
     .catch((err) => err)
