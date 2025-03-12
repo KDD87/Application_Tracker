@@ -11,7 +11,7 @@ const HomeBar = ({ data, setData, getAll, setIndividualCardData }) => {
       const searchedItems = data.data.filter((name) => {
         return name.companyName.toLowerCase().includes(e.target.value.toLowerCase());
       })
-      const obj = {}
+      // const obj = {}
       setData(searchedItems);
     })
     .catch((err) => err)
