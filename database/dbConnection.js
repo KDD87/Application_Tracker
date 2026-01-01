@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const { Schema } = mongoose
-mongoose.connect('mongodb://localhost:27017/application_tracker', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/application_tracker')
 
 const mySchema = new Schema({
   companyName: String,
